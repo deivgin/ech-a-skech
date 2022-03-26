@@ -8,11 +8,9 @@ const app = (() => {
     if (e.target !== board) {
       paint(e);
     }
-    console.log(isPaint);
   };
   const disablePaint = () => {
     isPaint = false;
-    console.log(isPaint);
   };
 
   const paint = (e) => {
@@ -37,6 +35,8 @@ const app = (() => {
     }
     board.removeEventListener("mousedown", enablePaint);
     board.removeEventListener("mouseup", disablePaint);
+    board.innerHTML = "";
+    init();
   };
 
   const init = () => {
@@ -47,7 +47,9 @@ const app = (() => {
 
   return {
     init,
+    resetGrid,
   };
 })();
 
 app.init();
+document.getElementById("resetBtn").addEventListener("click", app.resetGrid);

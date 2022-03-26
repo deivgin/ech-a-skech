@@ -1,6 +1,5 @@
 .board {
   display: grid;
-  gap: 1px;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
   border: 3px dashed #000;
